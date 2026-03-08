@@ -125,12 +125,6 @@
       font-size: 2rem;
     }
 
-    .section-intro {
-      max-width: 840px;
-      margin: 0 auto 2rem;
-      text-align: center;
-    }
-
     .text-block {
       max-width: 900px;
       margin: 0 auto;
@@ -189,6 +183,58 @@
 
     .package-box li {
       margin-bottom: 0.45rem;
+    }
+
+    .offer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .offer-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      flex: 1 1 280px;
+      max-width: 340px;
+      position: relative;
+    }
+
+    .offer-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--primary-bg);
+      font-size: 1.2rem;
+    }
+
+    .offer-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--primary-bg);
+      margin-bottom: 1rem;
+    }
+
+    .offer-card ul {
+      padding-left: 1.2rem;
+      margin: 0 0 1rem;
+    }
+
+    .offer-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--primary-bg);
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
     }
 
     .about-wrapper {
@@ -298,6 +344,7 @@
     <a href="#warum">Warum mit mir</a>
     <a href="#uebermich">Über mich</a>
     <a href="#faq">FAQ</a>
+    <a href="#angebote">Pakete</a>
     <a href="#einstieg">Einstieg</a>
     <a href="#contact">Kontakt</a>
     <a href="#rechtliches">Rechtliches</a>
@@ -434,6 +481,94 @@
           <h3>Wie kann ein Einstieg aussehen?</h3>
           <p>
             Ein sinnvoller Einstieg ist ein kompaktes Personaladmin-Check &amp; Strukturpaket. Dabei werden bestehende Unterlagen, Ablagen und administrative Abläufe gesichtet, typische Lücken identifiziert und konkrete nächste Schritte empfohlen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="angebote" style="background-color: var(--section-bg);">
+    <div class="container">
+      <h2>Angebote &amp; Pakete</h2>
+      <div class="text-block">
+        <p style="text-align:center;">
+          Je nach Bedarf kann die Zusammenarbeit projektbezogen, als Einstiegspaket oder als laufende administrative Unterstützung erfolgen.
+        </p>
+      </div>
+
+      <div class="offer-grid">
+        <div class="offer-card">
+          <div class="offer-badge">Einstieg</div>
+          <h3>Personaladmin-Check &amp; Strukturpaket</h3>
+          <div class="offer-price">ab 390 € · einmalig</div>
+          <ul>
+            <li>Sichtung der aktuellen Unterlagen und Ablagestruktur</li>
+            <li>Identifikation typischer Lücken und Engpässe</li>
+            <li>Vorschläge zur Vereinfachung und Strukturierung</li>
+            <li>Konkrete Handlungsempfehlung für die nächsten Schritte</li>
+          </ul>
+          <p>
+            Ideal für Betriebe, die ihre Personaladministration zunächst sortieren und eine klare Ausgangsbasis schaffen möchten.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-badge">laufend</div>
+          <h3>Monatliche Unterstützung</h3>
+          <div class="offer-price">ab 260 € / Monat</div>
+          <ul>
+            <li>Nachhalten fehlender Unterlagen</li>
+            <li>Unterstützung bei Ein- und Austritten</li>
+            <li>Pflege von Übersichten und administrativen Abläufen</li>
+            <li>Entlastung im laufenden Tagesgeschäft</li>
+          </ul>
+          <p>
+            Geeignet für Unternehmen mit regelmäßigem Bedarf an strukturierter administrativer Unterstützung.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-badge">flexibel</div>
+          <h3>Stundenweise Unterstützung</h3>
+          <div class="offer-price">ab 65 € / Stunde</div>
+          <ul>
+            <li>Punktuelle Unterstützung bei konkreten Aufgaben</li>
+            <li>Hilfe bei Unterlagen, Abläufen oder Personalprozessen</li>
+            <li>Flexibel buchbar nach Aufwand</li>
+            <li>Ideal für kurzfristige Entlastung</li>
+          </ul>
+          <p>
+            Sinnvoll für einzelne Themen, Engpässe oder administrative Aufgaben mit klar begrenztem Umfang.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-badge">projektbezogen</div>
+          <h3>Onboarding- &amp; Eintrittsstruktur</h3>
+          <div class="offer-price">ab 450 € · projektbezogen</div>
+          <ul>
+            <li>Checklisten für Neueintritte und wechselndes Personal</li>
+            <li>Struktur für Unterlagen und Nachverfolgung</li>
+            <li>Standardisierung wiederkehrender Abläufe</li>
+            <li>Praxisnahe Vorlagen für den Alltag</li>
+          </ul>
+          <p>
+            Besonders passend für Clubs, Kultur-, Event- und andere Betriebe mit häufig wechselndem Personal.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-badge">projektbezogen</div>
+          <h3>Digitale Struktur &amp; Vorlagen</h3>
+          <div class="offer-price">ab 500 € · projektbezogen</div>
+          <ul>
+            <li>Dokumenten- und Fristenübersichten</li>
+            <li>Strukturierung digitaler Ablagen</li>
+            <li>Vorlagen für wiederkehrende Abläufe</li>
+            <li>Praxisnahe digitale und KI-gestützte Lösungen</li>
+          </ul>
+          <p>
+            Für Betriebe, die administrative Abläufe übersichtlicher, einheitlicher und digitaler organisieren möchten.
           </p>
         </div>
       </div>
