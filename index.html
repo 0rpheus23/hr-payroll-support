@@ -10,14 +10,18 @@
   />
   <style>
     :root {
-      --primary-bg: #0c2340;
+      --primary-bg: #0b1f36;
       --primary-text: #ffffff;
-      --accent: #f5b841;
-      --accent-dark: #e6a93d;
-      --text-color: #333333;
+      --accent: #d9a441;
+      --accent-dark: #c18e2f;
+      --text-color: #2f2f2f;
+      --muted-text: #666666;
       --card-bg: #ffffff;
-      --section-bg: #f7f7f7;
-      --border: #e3e3e3;
+      --section-bg: #f6f4ef;
+      --section-alt: #ffffff;
+      --border: #e7e0d3;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --radius: 14px;
     }
 
     * {
@@ -32,7 +36,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--text-color);
       background-color: var(--section-bg);
     }
@@ -42,41 +46,43 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
     header {
       position: relative;
       background-image:
-        linear-gradient(rgba(12, 35, 64, 0.68), rgba(12, 35, 64, 0.68)),
+        linear-gradient(rgba(11, 31, 54, 0.72), rgba(11, 31, 54, 0.72)),
         url("images/hero.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: var(--primary-text);
       text-align: center;
-      padding: 8rem 1rem;
+      padding: 8rem 1rem 7rem;
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
       padding: 1rem;
     }
 
     header h1 {
       margin: 0 0 1rem;
-      font-size: 2.4rem;
-      line-height: 1.2;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+      font-size: 2.6rem;
+      line-height: 1.15;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
     }
 
     header p {
-      margin: 0 auto 1.75rem;
+      margin: 0 auto 1.8rem;
       max-width: 780px;
       font-size: 1.08rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+      color: rgba(255, 255, 255, 0.96);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
     }
 
     .hero-buttons {
@@ -91,12 +97,13 @@
       display: inline-block;
       background-color: var(--accent);
       color: var(--primary-bg);
-      padding: 0.85rem 1.5rem;
+      padding: 0.9rem 1.6rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
     }
 
     .btn:hover {
@@ -111,13 +118,14 @@
       flex-wrap: wrap;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
 
     nav a {
       color: var(--primary-text);
-      padding: 0.85rem 1rem;
+      padding: 0.9rem 1rem;
       text-decoration: none;
       font-weight: 600;
       transition: background-color 0.15s ease-in-out;
@@ -128,77 +136,29 @@
     }
 
     section {
-      padding: 3.25rem 1rem;
+      padding: 4rem 1rem;
     }
 
     section h2 {
       text-align: center;
       margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
       color: var(--primary-bg);
       font-size: 2rem;
+      line-height: 1.2;
     }
 
     .text-block {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
+    .text-block p {
+      font-size: 1.02rem;
+      color: var(--text-color);
     }
 
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 1px solid var(--border);
-      padding: 2rem 1.5rem;
-      flex: 1 1 280px;
-      max-width: 340px;
-    }
-
-    .card-wide {
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      color: var(--primary-bg);
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.96rem;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .package-box {
-      max-width: 500px;
-    }
-
-    .package-box ul {
-      padding-left: 1.2rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .package-box li {
-      margin-bottom: 0.45rem;
-    }
-
+    .grid,
     .offer-grid {
       display: flex;
       flex-wrap: wrap;
@@ -206,37 +166,62 @@
       justify-content: center;
     }
 
+    .card,
     .offer-card {
       background-color: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       border: 1px solid var(--border);
       padding: 2rem 1.5rem;
       flex: 1 1 280px;
       max-width: 340px;
-      position: relative;
     }
 
+    .card-wide {
+      max-width: 920px;
+      width: 100%;
+    }
+
+    .card h3,
     .offer-card h3 {
       margin-top: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: var(--primary-bg);
-      font-size: 1.2rem;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+
+    .card p,
+    .offer-card p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--text-color);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 920px;
+      margin: 0 auto;
     }
 
     .offer-price {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: bold;
       color: var(--primary-bg);
       margin-bottom: 1rem;
     }
 
-    .offer-card ul {
+    .offer-card ul,
+    .package-box ul,
+    .credential-list {
       padding-left: 1.2rem;
-      margin: 0 0 1rem;
+      margin: 1rem 0;
     }
 
-    .offer-card li {
+    .offer-card li,
+    .package-box li,
+    .credential-list li {
       margin-bottom: 0.45rem;
     }
 
@@ -244,18 +229,22 @@
       display: inline-block;
       background-color: var(--accent);
       color: var(--primary-bg);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: bold;
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 999px;
       margin-bottom: 0.8rem;
     }
 
+    .package-box {
+      max-width: 540px;
+    }
+
     .about-wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 2rem;
-      max-width: 1000px;
+      max-width: 1040px;
       margin: 0 auto;
       flex-wrap: wrap;
     }
@@ -269,19 +258,48 @@
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+      border: 1px solid var(--border);
     }
 
     .about-text {
-      flex: 2 1 420px;
+      flex: 2 1 460px;
+    }
+
+    .about-text p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .credentials-box {
+      margin-top: 1.5rem;
+      background-color: #fbfaf7;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .credentials-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: var(--primary-bg);
+      font-size: 1.1rem;
+    }
+
+    .credentials-box p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+      color: var(--muted-text);
+      font-size: 0.95rem;
     }
 
     #contact .contact-details {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
       font-size: 0.98rem;
       text-align: center;
     }
@@ -309,20 +327,24 @@
 
     .note {
       font-size: 0.92rem;
-      color: #555;
+      color: var(--muted-text);
       text-align: center;
       max-width: 900px;
-      margin: 1.5rem auto 0;
+      margin: 1.2rem auto 0;
     }
 
     @media (max-width: 700px) {
       header {
-        padding: 5rem 1rem;
+        padding: 5rem 1rem 4.5rem;
         background-position: center center;
       }
 
       header h1 {
-        font-size: 1.75rem;
+        font-size: 1.85rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
       }
 
       section h2 {
@@ -460,12 +482,28 @@
           <p>
             Ich bin Dominik Wild und unterstütze Clubs, Kultur-, Event- und andere Betriebe mit wechselndem Personal dabei, administrative Abläufe besser zu organisieren.
           </p>
+
           <p>
-            Mein Schwerpunkt liegt auf Personalunterlagen, Eintritten, wiederkehrenden Abläufen und allem, was im Hintergrund sauber laufen muss, damit im Tagesgeschäft nicht ständig Chaos entsteht.
+            Mein Schwerpunkt liegt auf Personalunterlagen, Eintritten, wiederkehrenden Abläufen und allem, was im Hintergrund sauber laufen muss, damit im Tagesgeschäft nicht ständig Chaos entsteht. Gerade in Umfeldern, in denen viel parallel läuft und oft wenig Zeit für saubere Admin bleibt, zahlt sich Struktur doppelt aus.
           </p>
+
           <p>
             Ich arbeite strukturiert, sorgfältig und pragmatisch. Mir geht es nicht darum, Prozesse unnötig aufzublasen, sondern darum, sie so aufzusetzen, dass sie für den Alltag wirklich hilfreich sind – auch dann, wenn es schnell gehen muss und viele Dinge gleichzeitig passieren.
           </p>
+
+          <div class="credentials-box">
+            <h3>Fachlicher Hintergrund</h3>
+            <p>
+              Ich bringe praktische Erfahrung aus der operativen Personalarbeit mit – insbesondere in Bereichen, in denen Genauigkeit, Verlässlichkeit und ein sauberer Umgang mit Unterlagen und Fristen entscheidend sind.
+            </p>
+            <ul class="credential-list">
+              <li>Praktische Erfahrung in Personaladministration und payrollnahen Prozessen</li>
+              <li>Erfahrung im Bescheinigungswesen, in der Datenpflege und im Fristenmanagement</li>
+              <li>Vertraut mit wiederkehrenden Abläufen rund um Eintritte, Unterlagen und administrative Nachverfolgung</li>
+              <li>Geprüfter Personalreferent</li>
+              <li>Praxisnaher Blick auf digitale, strukturierende und KI-gestützte Unterstützung im Arbeitsalltag</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
