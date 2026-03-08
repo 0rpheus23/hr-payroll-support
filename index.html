@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dominik Wild – HR &amp; Payroll Support</title>
+  <meta
+    name="description"
+    content="Externer Support für Personaladministration, vorbereitende Abrechnungsprozesse und digitale HR-Abläufe."
+  />
+  <style>
+    :root {
+      --primary-bg: #0c2340;
+      --primary-text: #ffffff;
+      --accent: #f5b841;
+      --accent-dark: #e6a93d;
+      --text-color: #333333;
+      --card-bg: #ffffff;
+      --section-bg: #f7f7f7;
+      --border: #e3e3e3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--section-bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      background-color: var(--primary-bg);
+      color: var(--primary-text);
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      margin: 0 0 0.75rem;
+      font-size: 2.2rem;
+      line-height: 1.3;
+    }
+
+    header p {
+      margin: 0 auto 1.5rem;
+      max-width: 760px;
+      font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--primary-bg);
+      padding: 0.85rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    nav {
+      background-color: var(--primary-bg);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a {
+      color: var(--primary-text);
+      padding: 0.85rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    nav a:hover {
+      background-color: #132d4a;
+    }
+
+    section {
+      padding: 3.25rem 1rem;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: var(--primary-bg);
+      font-size: 2rem;
+    }
+
+    .section-intro {
+      max-width: 840px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .text-block {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      flex: 1 1 280px;
+      max-width: 340px;
+    }
+
+    .card-wide {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      color: var(--primary-bg);
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .package-box {
+      max-width: 500px;
+    }
+
+    .package-box ul {
+      padding-left: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .package-box li {
+      margin-bottom: 0.45rem;
+    }
+
+    #contact .contact-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.98rem;
+      text-align: center;
+    }
+
+    #contact .contact-details a {
+      color: var(--primary-bg);
+    }
+
+    footer {
+      background-color: var(--primary-bg);
+      color: var(--primary-text);
+      padding: 2rem 1rem;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      font-size: 0.92rem;
+      color: #555;
+      text-align: center;
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      nav a {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>
+        Verlässlicher externer Support für Personaladministration,
+        vorbereitende Abrechnungsprozesse und digitale HR-Abläufe
+      </h1>
+      <p>
+        Ich unterstütze kleine und mittlere Unternehmen dabei, ihr HR-Backoffice
+        strukturierter, übersichtlicher und effizienter zu organisieren.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn">Jetzt Kontakt aufnehmen</a>
+        <a href="#leistungen" class="btn">Leistungen ansehen</a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#fuerwen">Für wen</a>
+    <a href="#warum">Warum mit mir</a>
+    <a href="#uebermich">Über mich</a>
+    <a href="#faq">FAQ</a>
+    <a href="#einstieg">Einstieg</a>
+    <a href="#contact">Kontakt</a>
+    <a href="#rechtliches">Rechtliches</a>
+  </nav>
+
+  <section id="intro">
+    <div class="container">
+      <h2>Einleitung</h2>
+      <div class="text-block">
+        <p>
+          Administrative Personalprozesse kosten Zeit, brauchen Sorgfalt und geraten
+          im Tagesgeschäft schnell unter Druck. Ich unterstütze Unternehmen dabei,
+          Personaladministration, vorbereitende Abrechnungsprozesse und digitale
+          HR-Abläufe klarer zu strukturieren und operativ zu entlasten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="container">
+      <h2>Leistungen</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Personaladministration entlasten</h3>
+          <p>
+            Unterstützung bei Ein- und Austritten, Dokumentenmanagement,
+            Nachverfolgung fehlender Unterlagen sowie der Strukturierung
+            personalrelevanter Ablagen und Übersichten.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Vorbereitende Abrechnungsprozesse strukturieren</h3>
+          <p>
+            Zusammenstellung abrechnungsrelevanter Informationen, Pflege und
+            Strukturierung von Personaldaten, Nachverfolgung fehlender Angaben
+            oder Dokumente und vorbereitende Unterstützung bei wiederkehrenden
+            administrativen Abläufen.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Digitale HR-Abläufe verbessern</h3>
+          <p>
+            Praxisnahe Unterstützung bei Onboarding- und Austritts-Checklisten,
+            Dokumenten- und Fristenübersichten, Vorlagen für wiederkehrende
+            Abläufe, Strukturierung digitaler Ablagen sowie praxisnahen
+            digitalen und KI-gestützten Lösungen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuerwen" style="background-color: var(--card-bg);">
+    <div class="container">
+      <h2>Für wen ist das Angebot geeignet?</h2>
+      <div class="text-block">
+        <p>
+          Mein Angebot richtet sich an kleine und mittlere Unternehmen, die ihre
+          Personaladministration verlässlicher aufstellen, wiederkehrende Abläufe
+          vereinfachen und das HR-Backoffice im Tagesgeschäft spürbar entlasten
+          möchten. Besonders sinnvoll ist es für Firmen mit 10 bis 80 Mitarbeitenden,
+          die keine ausgeprägte HR-Abteilung besitzen oder ihre Abläufe effizienter
+          gestalten möchten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="warum">
+    <div class="container">
+      <h2>Warum mit mir?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Strukturierte Unterstützung</h3>
+          <p>
+            Klare, nachvollziehbare und alltagstaugliche Lösungen statt unnötiger
+            Komplexität. Ich konzentriere mich auf das Wesentliche und setze
+            Strukturen, die funktionieren.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sorgfältige Arbeitsweise</h3>
+          <p>
+            Zuverlässigkeit und Genauigkeit stehen im Mittelpunkt – gerade bei
+            administrativen Abläufen zählen Ordnung und Sorgfalt.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Praxisnaher Blick</h3>
+          <p>
+            Ich unterstütze Unternehmen mit einem pragmatischen Blick auf das, was
+            im Alltag wirklich hilft: weniger Chaos, klarere Abläufe und eine
+            verlässliche administrative Basis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uebermich" style="background-color: var(--card-bg);">
+    <div class="container">
+      <h2>Über mich</h2>
+      <div class="text-block">
+        <p>
+          Ich bin Dominik Wild und unterstütze kleine und mittlere Unternehmen bei
+          Personaladministration, vorbereitenden Abrechnungsprozessen und digitalen
+          HR-Abläufen. Ich bringe praktische Erfahrung in der Personaladministration,
+          in payrollnahen Prozessen, im Bescheinigungswesen, in der Datenpflege,
+          im Fristenmanagement sowie in der digitalen Prozessunterstützung mit.
+        </p>
+        <p>
+          Mein Arbeitsstil ist strukturiert, sorgfältig und lösungsorientiert.
+          Mir ist wichtig, administrative Abläufe nicht unnötig kompliziert zu
+          machen, sondern verständlich, verlässlich und alltagstauglich zu
+          organisieren. Ich unterstütze Unternehmen dort, wo im Tagesgeschäft
+          Entlastung gebraucht wird: bei der Strukturierung von Unterlagen, bei der
+          Vorbereitung wiederkehrender Abläufe und bei der Verbesserung einfacher
+          digitaler HR-Prozesse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2>Häufige Fragen</h2>
+      <div class="faq-list">
+        <div class="card card-wide">
+          <h3>Für wen ist das Angebot geeignet?</h3>
+          <p>
+            Mein Angebot richtet sich an kleine und mittlere Unternehmen, die
+            administrative HR-Aufgaben zuverlässiger und effizienter organisieren
+            möchten. Besonders sinnvoll ist es für Unternehmen ohne ausgeprägte
+            HR-Abteilung oder für Betriebe, die ihre HR-Abläufe strukturierter
+            aufstellen wollen.
+          </p>
+        </div>
+
+        <div class="card card-wide">
+          <h3>Wie läuft die Zusammenarbeit ab?</h3>
+          <p>
+            Wir besprechen zunächst Ihre aktuellen Abläufe und Anforderungen.
+            Danach erhalten Sie konkrete Vorschläge und ein auf Ihren Bedarf
+            angepasstes Angebot. Die Umsetzung erfolgt transparent und praxisnah.
+            Je nach Bedarf können Sie mich stundenweise, projektbezogen oder im
+            Rahmen eines Betreuungspakets engagieren.
+          </p>
+        </div>
+
+        <div class="card card-wide">
+          <h3>Was ist nicht Bestandteil des Angebots?</h3>
+          <p>
+            Das Angebot umfasst operative, vorbereitende und organisatorische
+            Unterstützungsleistungen im HR- und payrollnahen Backoffice-Bereich.
+            Steuerliche oder rechtliche Beratung sowie die eigenständige Erstellung
+            von Lohnabrechnungen sind nicht Bestandteil des Angebots.
+          </p>
+        </div>
+
+        <div class="card card-wide">
+          <h3>Wie kann ein Einstieg aussehen?</h3>
+          <p>
+            Ein sinnvoller Einstieg ist ein kompaktes Personaladmin-Check &amp;
+            Strukturpaket, bei dem vorhandene Unterlagen, Ablagestrukturen und
+            Prozesse gesichtet werden. Auf Basis dieser Analyse erhalten Sie
+            konkrete Vorschläge zur Vereinfachung und Strukturierung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="einstieg" style="background-color: var(--card-bg);">
+    <div class="container">
+      <h2>Einstiegspaket</h2>
+      <div class="grid">
+        <div class="card package-box">
+          <h3>Personaladmin-Check &amp; Strukturpaket</h3>
+          <p><strong>ab 390 €</strong> – einmalig</p>
+          <ul>
+            <li>Sichtung der aktuellen HR-Unterlagen und Ablagestruktur</li>
+            <li>Identifikation typischer Lücken und Engpässe</li>
+            <li>Vorschläge zur Vereinfachung und Strukturierung</li>
+            <li>Übersicht zu wiederkehrenden Personalprozessen</li>
+            <li>Kurze Handlungsempfehlung für die nächsten Schritte</li>
+          </ul>
+          <p>
+            Dieses kompakte Paket ist der optimale Einstieg, um Potenziale zu
+            erkennen und spürbare Verbesserungen zu erreichen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <div class="contact-details">
+        <p><strong>Dominik Wild – HR &amp; Payroll Support</strong></p>
+        <p>Berlin</p>
+        <p>
+          E-Mail:
+          <a href="mailto:info@beispiel-domain.de">info@beispiel-domain.de</a>
+        </p>
+        <p>
+          Telefon:
+          <a href="tel:+49XXXXXXXXXXX">+49 …</a>
+        </p>
+        <p>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/beispiel" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/beispiel
+          </a>
+        </p>
+      </div>
+      <p class="note">
+        Ersetze diese Platzhalter unbedingt vor der Veröffentlichung durch deine
+        echten Kontaktdaten.
+      </p>
+    </div>
+  </section>
+
+  <section id="rechtliches" style="background-color: var(--card-bg);">
+    <div class="container">
+      <h2>Rechtliches</h2>
+      <div class="text-block">
+        <h3>Impressum</h3>
+        <p>
+          <strong>Angaben gemäß § 5 DDG</strong><br />
+          Dominik Wild<br />
+          Straße und Hausnummer<br />
+          PLZ Ort<br />
+          Deutschland
+        </p>
+
+        <p>
+          <strong>Kontakt:</strong><br />
+          Telefon: +49 …<br />
+          E-Mail: info@beispiel-domain.de
+        </p>
+
+        <p>
+          <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br />
+          Dominik Wild<br />
+          Straße und Hausnummer<br />
+          PLZ Ort
+        </p>
+
+        <p>
+          Dieses Angebot umfasst operative, vorbereitende und organisatorische
+          Unterstützungsleistungen im HR- und payrollnahen Backoffice-Bereich.
+          Steuerliche oder rechtliche Beratung ist nicht Gegenstand des Angebots.
+        </p>
+
+        <h3>Datenschutzhinweise</h3>
+        <p>
+          <strong>1. Verantwortlicher</strong><br />
+          Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
+          Dominik Wild<br />
+          Straße und Hausnummer<br />
+          PLZ Ort<br />
+          Deutschland<br />
+          E-Mail: info@beispiel-domain.de<br />
+          Telefon: +49 …
+        </p>
+
+        <p>
+          <strong>2. Allgemeine Hinweise zur Datenverarbeitung</strong><br />
+          Personenbezogene Daten werden auf dieser Website nur im Rahmen der
+          geltenden gesetzlichen Vorschriften verarbeitet.
+        </p>
+
+        <p>
+          <strong>3. Aufruf der Website</strong><br />
+          Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch
+          erforderliche Daten, zum Beispiel IP-Adresse, Datum und Uhrzeit des
+          Zugriffs, Browsertyp und Betriebssystem, zur Bereitstellung und
+          Sicherheit der Website.
+        </p>
+
+        <p>
+          <strong>4. Kontaktaufnahme</strong><br />
+          Wenn Sie per E-Mail oder über das Kontaktformular mit mir in Verbindung
+          treten, werden die von Ihnen mitgeteilten Daten zum Zweck der
+          Bearbeitung Ihrer Anfrage verarbeitet.
+        </p>
+
+        <p>
+          <strong>5. Empfänger von Daten</strong><br />
+          Eine Weitergabe Ihrer personenbezogenen Daten erfolgt nur, soweit dies
+          gesetzlich erlaubt ist oder für die Bereitstellung der Website bzw. die
+          Bearbeitung Ihrer Anfrage erforderlich ist, zum Beispiel an
+          Hosting-Anbieter.
+        </p>
+
+        <p>
+          <strong>6. Speicherdauer</strong><br />
+          Personenbezogene Daten werden nur so lange gespeichert, wie dies für den
+          jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten
+          bestehen.
+        </p>
+
+        <p>
+          <strong>7. Ihre Rechte</strong><br />
+          Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung
+          der Verarbeitung, Widerspruch, Datenübertragbarkeit und Beschwerde bei
+          einer Datenschutzaufsichtsbehörde.
+        </p>
+
+        <p>
+          <strong>8. Externe Links</strong><br />
+          Diese Website kann Links zu externen Websites enthalten. Für deren
+          Inhalte und Datenschutzpraktiken sind ausschließlich die jeweiligen
+          Betreiber verantwortlich.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Dominik Wild – HR &amp; Payroll Support</p>
+    <p><a href="#rechtliches">Impressum &amp; Datenschutzhinweise</a></p>
+  </footer>
+</body>
+</html>
